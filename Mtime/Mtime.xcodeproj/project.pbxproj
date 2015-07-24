@@ -44,6 +44,9 @@
 		B387C6CC1B5CDB330045B799 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B387C6BB1B5CDB330045B799 /* UIImageView+WebCache.m */; };
 		B387C6CD1B5CDB330045B799 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B387C6BD1B5CDB330045B799 /* UIView+WebCacheOperation.m */; };
 		B387C6CF1B5CEFFB0045B799 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B387C6CE1B5CEFFB0045B799 /* MyTableViewCell.xib */; };
+		B38AF5F61B6217B900BEA128 /* PostView.m in Sources */ = {isa = PBXBuildFile; fileRef = B38AF5F51B6217B900BEA128 /* PostView.m */; };
+		B38AF5FF1B6225C500BEA128 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = B38AF5FE1B6225C500BEA128 /* iCarousel.m */; };
+		B3916F711B624A3900505304 /* BigPostCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3916F701B624A3900505304 /* BigPostCollectionView.m */; };
 		B3C78EC01B588E3C00DD945E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C78EBF1B588E3C00DD945E /* main.m */; };
 		B3C78EC31B588E3C00DD945E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C78EC21B588E3C00DD945E /* AppDelegate.m */; };
 		B3C78EC61B588E3C00DD945E /* Mtime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3C78EC41B588E3C00DD945E /* Mtime.xcdatamodeld */; };
@@ -299,6 +302,12 @@
 		B387C6BC1B5CDB330045B799 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		B387C6BD1B5CDB330045B799 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		B387C6CE1B5CEFFB0045B799 /* MyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
+		B38AF5F41B6217B900BEA128 /* PostView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostView.h; sourceTree = "<group>"; };
+		B38AF5F51B6217B900BEA128 /* PostView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostView.m; sourceTree = "<group>"; };
+		B38AF5FD1B6225C500BEA128 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		B38AF5FE1B6225C500BEA128 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		B3916F6F1B624A3900505304 /* BigPostCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigPostCollectionView.h; sourceTree = "<group>"; };
+		B3916F701B624A3900505304 /* BigPostCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigPostCollectionView.m; sourceTree = "<group>"; };
 		B3C78EBA1B588E3C00DD945E /* Mtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C78EBE1B588E3C00DD945E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3C78EBF1B588E3C00DD945E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -510,6 +519,8 @@
 		B33457021B5E56640054CF42 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				B38AF5FD1B6225C500BEA128 /* iCarousel.h */,
+				B38AF5FE1B6225C500BEA128 /* iCarousel.m */,
 				B35D4F231B5F37E1004A065D /* UIView+viewController.h */,
 				B35D4F241B5F37E1004A065D /* UIView+viewController.m */,
 				B35D4F251B5F37E1004A065D /* UIViewExt.h */,
@@ -751,6 +762,10 @@
 		B3C78EF91B589FCE00DD945E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B38AF5F41B6217B900BEA128 /* PostView.h */,
+				B38AF5F51B6217B900BEA128 /* PostView.m */,
+				B3916F6F1B624A3900505304 /* BigPostCollectionView.h */,
+				B3916F701B624A3900505304 /* BigPostCollectionView.m */,
 				B387C6941B5CC7460045B799 /* MyTableViewCell.h */,
 				B387C6951B5CC7460045B799 /* MyTableViewCell.m */,
 				B387C6CE1B5CEFFB0045B799 /* MyTableViewCell.xib */,
@@ -1356,6 +1371,7 @@
 			files = (
 				B387C6C91B5CDB330045B799 /* UIImage+MultiFormat.m in Sources */,
 				B387C6CA1B5CDB330045B799 /* UIImage+WebP.m in Sources */,
+				B38AF5F61B6217B900BEA128 /* PostView.m in Sources */,
 				B33456C11B5DD8660054CF42 /* starView.m in Sources */,
 				B370DD111B6115B500B24D5B /* NewsCollectionViewCell.m in Sources */,
 				B370DD261B612ECE00B24D5B /* PhotoCollectionView.m in Sources */,
@@ -1367,7 +1383,9 @@
 				B33456CC1B5E1D4A0054CF42 /* newsModel.m in Sources */,
 				B35D4F2D1B5F7D20004A065D /* NewsDetialControllerViewController.m in Sources */,
 				B387C69B1B5CC88D0045B799 /* MovieModel.m in Sources */,
+				B38AF5FF1B6225C500BEA128 /* iCarousel.m in Sources */,
 				B3C78EC31B588E3C00DD945E /* AppDelegate.m in Sources */,
+				B3916F711B624A3900505304 /* BigPostCollectionView.m in Sources */,
 				B33456C81B5E1AB60054CF42 /* NewsTableViewCell.m in Sources */,
 				B387C6C31B5CDB330045B799 /* SDWebImageDownloader.m in Sources */,
 				B3C790681B58F3B300DD945E /* MovieViewController.m in Sources */,

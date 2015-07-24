@@ -9,6 +9,8 @@
 #import "MovieViewController.h"
 #import "MovieModel.h"
 #import "MyTableViewCell.h"
+#import "PostView.h"
+#import "BigPostCollectionView.h"
 
 @interface MovieViewController () <UICollectionViewDelegateFlowLayout,UITableViewDataSource>  //这个flowlayout 里面已经包含了delegat 协议， 所以就省了
 
@@ -25,7 +27,8 @@
     [self _creatCustomNavi];
     [self _creatMovieTableView];
     [self _creatMovieModel];
-    
+    [self _creatPostView];
+    [self _creatBigCollection];
         
     
     
@@ -83,9 +86,34 @@
     
 }
 
--(void)_creatPostView{
+-(void)_creatBigCollection{
+    
+    
 
     
+}
+
+-(void)_creatPostView{
+    UIView* postView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, Swidth, Sheight)];
+    self.postView = postView;
+    PostView* topPostView = [[PostView alloc]initWithFrame:CGRectMake(0, -36, Swidth, 136)];
+    [postView addSubview:topPostView];
+    
+    
+    BigPostCollectionView* bigCollection = [[BigPostCollectionView alloc]initWithFrame:CGRectMake(0, 100, Swidth, Sheight-149) WithArray:self.movieModelArray];
+    bigCollection.movieArray = self.movieModelArray;
+
+    bigCollection.backgroundColor = [UIColor blueColor];
+
+    bigCollection.movieArray = self.movieModelArray;
+    [postView addSubview:bigCollection];
+    
+    UIButton* bottomButton = [[UIButton alloc]initWithFrame:CGRectMake(0, Sheight-84, Swidth, 35)];
+    [bottomButton setBackgroundImage:[UIImage imageNamed:@"tab_bg_all"] forState:UIControlStateNormal];
+    [postView addSubview:bottomButton];
+    
+    
+    [self.view addSubview:_postView];
 }
 
 - (void)_creatMovieModel{
@@ -119,6 +147,7 @@
     btn1.hidden = !btn1.hidden;
     btn2.hidden = !btn2.hidden;
     _movieTableView.hidden = !_movieTableView.hidden;
+    _postView.hidden =! _postView.hidden;
 
 }
 
