@@ -8,6 +8,8 @@
 
 #import "PostView.h"
 #import "iCarousel.h"
+#import "UIImageView+WebCache.h"
+#import "UIViewExt.h"
 #define TopViewHeight 136
 #define TopViewTop -36
 #define TopPostHeight 100
@@ -21,10 +23,16 @@
 
 @implementation PostView
 
--(instancetype)initWithFrame:(CGRect)frame{
+-(instancetype)initWithFrame:(CGRect)frame WithArray:(NSArray*)movieArray{
     self = [super initWithFrame:frame];
-    
-    [self _creatTopView];
+    if (self) {
+        
+        self.movieArray = movieArray;
+        [self _creatTopView];
+        
+        
+
+    }
     
     
     return self;
@@ -39,10 +47,12 @@
     UIImage* topBtnImg = [UIImage imageNamed:@"indexBG_home"];
     topBtnImg  =  [topBtnImg stretchableImageWithLeftCapWidth:0 topCapHeight:1];
     [topButton setBackgroundImage:topBtnImg forState:UIControlStateNormal];
-    topView.backgroundColor = [UIColor redColor];
+//    topView.backgroundColor = [UIColor redColor];
+    [topButton addTarget:self action:@selector(topButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [topView addSubview:topButton];
     
     iCarousel* carouselView = [[iCarousel alloc]initWithFrame:CGRectMake(0, 0, Swidth, TopPostHeight)];
+    carouselView.stopAtItemBoundary = YES;
     carouselView.delegate = self;
     carouselView.dataSource = self;
     carouselView.type = iCarouselTypeCoverFlow;
@@ -56,21 +66,53 @@
     
 }
 
+-(void)topButtonAction{
+    
+    [self MovieSelf];
+    
+    
+}
+
+-(void)MovieSelf{
+    
+    if (self.top < 0 ) {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.coverView.hidden = NO;
+            self.top = 64;
+
+        }];
+    }else{
+        [UIView animateWithDuration:0.3 animations:^{
+            self.coverView.hidden = YES;
+            self.top = -36;
+            
+        }];
+    }
+    
+}
+
 -(NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel{
     
     
-    return 100;
+    return self.movieArray.count;
 }
 
 -(UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view{
+    self.movieModel = _movieArray[index];
+    NSDictionary* images = _movieModel.image;
+    NSString* str = images[@"medium"];
     
     if (nil == view) {
-        view = [[UIView alloc]initWithFrame:CGRectMake((1-0.16)*Swidth/2, 5, 0.16*Swidth, 90)];
+        view = [[UIImageView alloc]initWithFrame:CGRectMake((1-0.16)*Swidth/2, 5, 0.16*Swidth, 100)];
+        [((UIImageView*)view) sd_setImageWithURL:[NSURL URLWithString:str]];
         view.backgroundColor = [UIColor purpleColor];
         
         
         
     }else{
+        view = [[UIImageView alloc]initWithFrame:CGRectMake((1-0.16)*Swidth/2, 5, 0.16*Swidth, 90)];
+        [((UIImageView*)view) sd_setImageWithURL:[NSURL URLWithString:str]];
+
         view.backgroundColor = [UIColor orangeColor];
         
     }

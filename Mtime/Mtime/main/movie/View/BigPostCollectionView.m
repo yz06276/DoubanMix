@@ -20,6 +20,7 @@
         collectionView.type = iCarouselTypeWheel;
         collectionView.delegate = self;
         collectionView.dataSource = self;
+        collectionView.ignorePerpendicularSwipes = YES;
         [self addSubview:collectionView];
     }
     return self;
@@ -34,8 +35,8 @@
 -(UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view{
     
     
-    NSDictionary* dict = _movieArray[index];
-    NSDictionary* images = dict[@"image"];
+    self.movieModel = _movieArray[index];
+    NSDictionary* images = _movieModel.image;
     NSString* str = images[@"large"];
 
     if (nil == view) {

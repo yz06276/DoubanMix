@@ -17,6 +17,7 @@
 @property (nonatomic,strong)UITableView* movieTableView;
 @property (nonatomic,strong)UIView* postView;
 @property (nonatomic,strong)NSMutableArray* movieModelArray;
+@property (nonatomic,strong)UIView* coverView;
 
 @end
 
@@ -28,7 +29,7 @@
     [self _creatMovieTableView];
     [self _creatMovieModel];
     [self _creatPostView];
-    [self _creatBigCollection];
+  //  [self _creatBigCollection];
         
     
     
@@ -94,20 +95,27 @@
 }
 
 -(void)_creatPostView{
-    UIView* postView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, Swidth, Sheight)];
-    self.postView = postView;
-    PostView* topPostView = [[PostView alloc]initWithFrame:CGRectMake(0, -36, Swidth, 136)];
-    [postView addSubview:topPostView];
     
+    UIView* postView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, Swidth, Sheight)];
+
     
     BigPostCollectionView* bigCollection = [[BigPostCollectionView alloc]initWithFrame:CGRectMake(0, 100, Swidth, Sheight-149) WithArray:self.movieModelArray];
-    bigCollection.movieArray = self.movieModelArray;
+//    bigCollection.movieArray = self.movieModelArray;
 
-    bigCollection.backgroundColor = [UIColor blueColor];
+//    bigCollection.backgroundColor = [UIColor blueColor];
 
-    bigCollection.movieArray = self.movieModelArray;
+//    bigCollection.movieArray = self.movieModelArray;
+    self.postView = postView;
+    PostView* topPostView = [[PostView alloc]initWithFrame:CGRectMake(0, -36, Swidth, 136) WithArray:self.movieModelArray];
+    UIView* coverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, Swidth, Sheight)];
+    coverView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
+    self.coverView = coverView;
+    coverView.hidden = YES;
     [postView addSubview:bigCollection];
-    
+    [postView addSubview:coverView];
+    topPostView.coverView = coverView;
+    [postView addSubview:topPostView];
+
     UIButton* bottomButton = [[UIButton alloc]initWithFrame:CGRectMake(0, Sheight-84, Swidth, 35)];
     [bottomButton setBackgroundImage:[UIImage imageNamed:@"tab_bg_all"] forState:UIControlStateNormal];
     [postView addSubview:bottomButton];

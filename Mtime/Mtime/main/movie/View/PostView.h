@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "iCarousel.h"
+#import "MovieModel.h"
+
 @interface PostView : UIView <iCarouselDelegate,iCarouselDataSource>
+
+@property (strong,nonatomic) NSArray* movieArray;
+@property (strong,nonatomic) MovieModel* movieModel;
+@property (strong,nonatomic) UIView* topView;
+@property (strong,nonatomic) UIView* coverView;
+
+-(instancetype)initWithFrame:(CGRect)frame WithArray:(NSArray*)movieArray;
+
 
 @end
