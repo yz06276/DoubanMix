@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="topCell" id="gTV-IL-0wX" customClass="MyCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="109" height="158"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="109" height="158"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GWY-Wn-XNp">
+                        <rect key="frame" x="0.0" y="0.0" width="109" height="131"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="10.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yx-Pa-CcF">
+                        <rect key="frame" x="76" y="137" width="33" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg5-nf-lds">
+                        <rect key="frame" x="8" y="108" width="93" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Xe-yn-Sem" customClass="starView">
+                        <rect key="frame" x="0.0" y="145" width="60" height="13"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="2yx-Pa-CcF" firstAttribute="top" secondItem="GWY-Wn-XNp" secondAttribute="bottom" constant="8" symbolic="YES" id="M7I-E7-DXz"/>
+                <constraint firstAttribute="bottom" secondItem="2yx-Pa-CcF" secondAttribute="bottom" id="RAa-Aq-h7f"/>
+                <constraint firstAttribute="bottom" secondItem="1Xe-yn-Sem" secondAttribute="bottom" id="SdH-dU-jXu"/>
+                <constraint firstItem="GWY-Wn-XNp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eaD-Ic-aeO"/>
+                <constraint firstAttribute="trailing" secondItem="2yx-Pa-CcF" secondAttribute="trailing" id="kNT-Cx-dbO"/>
+                <constraint firstItem="GWY-Wn-XNp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lcr-vy-edD"/>
+                <constraint firstItem="1Xe-yn-Sem" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lxS-EM-brc"/>
+                <constraint firstItem="2yx-Pa-CcF" firstAttribute="leading" secondItem="1Xe-yn-Sem" secondAttribute="trailing" constant="16" id="oLS-zi-JfB"/>
+                <constraint firstAttribute="trailing" secondItem="GWY-Wn-XNp" secondAttribute="trailing" id="zbG-q0-ODW"/>
+            </constraints>
+            <size key="customSize" width="109" height="158"/>
+            <connections>
+                <outlet property="average" destination="2yx-Pa-CcF" id="pzp-xf-MMC"/>
+                <outlet property="postIcon" destination="GWY-Wn-XNp" id="VvG-BP-Xpt"/>
+                <outlet property="starView" destination="1Xe-yn-Sem" id="OH4-gg-u1O"/>
+                <outlet property="title" destination="Xg5-nf-lds" id="1iI-gw-1d6"/>
+            </connections>
+            <point key="canvasLocation" x="277.5" y="256"/>
+        </collectionViewCell>
+    </objects>
+</document>

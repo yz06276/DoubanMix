@@ -1,0 +1,22 @@
+//
+//  PrefixHeader.pch
+//  Mtime
+//
+//  Created by Mee Leo on 17/7/15.
+//  Copyright (c) 2015年 Mee Leo. All rights reserved.
+//
+
+#ifndef Mtime_PrefixHeader_pch
+#define Mtime_PrefixHeader_pch
+
+
+
+#define Swidth [UIScreen mainScreen].bounds.size.width
+#define Sheight [UIScreen mainScreen].bounds.size.height
+#define iconWidth 44
+#define iconWidth 44
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
