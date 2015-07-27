@@ -21,7 +21,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-//        [self _creatSubView];
+        [self _creatSubView];
     }
     return self;
 }

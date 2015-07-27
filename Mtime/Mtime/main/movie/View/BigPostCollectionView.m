@@ -8,10 +8,15 @@
 
 #import "BigPostCollectionView.h"
 #import "UIImageView+WebCache.h"
+#import "BigPostCollectionCell.h"
 @implementation BigPostCollectionView
+#pragma mark - init方法
 
+//重构了 init方法， 必须暴露给.h ，在.h 里面声明，才能紧跟着alloc 调用
 - (instancetype)initWithFrame:(CGRect)frame WithArray:(NSArray*)movieArray
 {
+    
+    
     self = [super initWithFrame:frame];
     if (self) {
         self.movieArray = movieArray;
@@ -22,9 +27,13 @@
         collectionView.dataSource = self;
         collectionView.ignorePerpendicularSwipes = YES;
         [self addSubview:collectionView];
+        
+        
     }
     return self;
 }
+
+#pragma mark - iCarousel.delegat & dataSourse
 
 
 
@@ -36,25 +45,23 @@
     
     
     self.movieModel = _movieArray[index];
-    NSDictionary* images = _movieModel.image;
-    NSString* str = images[@"large"];
+    
 
     if (nil == view) {
         
-        view = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 0.7*Swidth, 0.6*Sheight)];
-        view.backgroundColor = [UIColor greenColor];
-        [((UIImageView*)view) sd_setImageWithURL:[NSURL URLWithString:str]];
+        view = [[BigPostCollectionCell alloc]init];
         
-//        NSLog(@"%@",[dict objectForKey:@"large"]);
         
-    }
-    else{
-        
-        [((UIImageView*)view) sd_setImageWithURL:[NSURL URLWithString:str]];
-        view.backgroundColor = [UIColor yellowColor];
-        
-//        NSLog(@"%@",[dict objectForKey:@"large"]);
+        view = [[BigPostCollectionCell alloc]initWithFrame:CGRectMake(0, 0, 0.7*Swidth, 0.6*Sheight)];
+        ((BigPostCollectionCell*)view).movieModel = _movieArray[index];
 
+//        view.backgroundColor = [UIColor greenColor];
+
+    }else{
+        
+        ((BigPostCollectionCell*)view).movieModel = _movieArray[index];
+
+//        view.backgroundColor = [UIColor yellowColor];
 
     }
     return view;
@@ -68,7 +75,6 @@
     return value;
     
 }
-
 
 /*
 // Only override drawRect: if you perform custom drawing.

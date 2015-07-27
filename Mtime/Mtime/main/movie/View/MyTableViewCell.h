@@ -11,12 +11,11 @@
 @interface MyTableViewCell : UITableViewCell
 
 
-@property (nonatomic,strong)MovieModel* movieModel;
-@property (strong, nonatomic) IBOutlet starView *star;
-
+@property (nonatomic,strong ) MovieModel  * movieModel;
+@property (strong, nonatomic) IBOutlet starView    *star;
 @property (strong, nonatomic) IBOutlet UIImageView *post;
-@property (strong, nonatomic) IBOutlet UILabel *title;
-@property (strong, nonatomic) IBOutlet UILabel *year;
-@property (strong, nonatomic) IBOutlet UILabel *rate;
+@property (strong, nonatomic) IBOutlet UILabel     *title;
+@property (strong, nonatomic) IBOutlet UILabel     *year;
+@property (strong, nonatomic) IBOutlet UILabel     *rate;
 
 @end

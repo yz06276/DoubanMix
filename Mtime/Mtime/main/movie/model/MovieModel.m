@@ -13,7 +13,7 @@
 -(NSString *)description{
 
     return [NSString stringWithFormat:@"name:%@   year:%@",_title,_year];
-
+    
 }
 
 @end

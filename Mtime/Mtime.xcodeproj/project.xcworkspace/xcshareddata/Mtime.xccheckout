@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>91E8F111-1E36-4A40-A322-3C972A92DC76</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Mtime</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>561E2D5F45676D53025C466AC46CD409862F5CC3</key>
 		<string>https://github.com/yz06276/Mtime_DoubanMix.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Mtime/Mtime.xcodeproj/project.xcworkspace</string>
+	<string>Mtime/Mtime.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>561E2D5F45676D53025C466AC46CD409862F5CC3</key>

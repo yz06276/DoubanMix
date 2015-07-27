@@ -41,7 +41,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Creat
+#pragma mark - 创建子视图
 
 - (void)_creatCustomNavi{
     UIView* flipView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 50, 30)]; //Rect的尺寸要和图片相匹配，否则在不设置填充模式的时候，如果设置的太高就会导致北京图片靠上。因为添加到导航栏的时候， 系统是按图层的center来放的
@@ -82,22 +82,20 @@
     movieTableView.backgroundColor = [UIColor clearColor];
     self.movieTableView.allowsSelection = NO;
     
+    
 
     
     
 }
 
--(void)_creatBigCollection{
-    
-    
 
-    
-}
 
 -(void)_creatPostView{
     
     UIView* postView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, Swidth, Sheight)];
+    //画蛇添足放的这个东西， 是为了 实现点击右上角按钮，可以显示两个视图之间的翻转，所以海报的View 和 tableView被完全隔离放在两个View上， 通过改变对立的hidden状态来实现  轮流显示
 
+    
     
     BigPostCollectionView* bigCollection = [[BigPostCollectionView alloc]initWithFrame:CGRectMake(0, 100, Swidth, Sheight-149) WithArray:self.movieModelArray];
 //    bigCollection.movieArray = self.movieModelArray;
@@ -159,7 +157,7 @@
 
 }
 
-#pragma mark - Tools
+#pragma mark - 重用方法（解析，动画实现）
 
 
 

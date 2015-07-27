@@ -47,6 +47,7 @@
 		B38AF5F61B6217B900BEA128 /* PostView.m in Sources */ = {isa = PBXBuildFile; fileRef = B38AF5F51B6217B900BEA128 /* PostView.m */; };
 		B38AF5FF1B6225C500BEA128 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = B38AF5FE1B6225C500BEA128 /* iCarousel.m */; };
 		B3916F711B624A3900505304 /* BigPostCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3916F701B624A3900505304 /* BigPostCollectionView.m */; };
+		B39C69FC1B64F93B00F7C42E /* BigPostCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B39C69FB1B64F93B00F7C42E /* BigPostCollectionCell.m */; };
 		B3C78EC01B588E3C00DD945E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C78EBF1B588E3C00DD945E /* main.m */; };
 		B3C78EC31B588E3C00DD945E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C78EC21B588E3C00DD945E /* AppDelegate.m */; };
 		B3C78EC61B588E3C00DD945E /* Mtime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3C78EC41B588E3C00DD945E /* Mtime.xcdatamodeld */; };
@@ -308,6 +309,8 @@
 		B38AF5FE1B6225C500BEA128 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		B3916F6F1B624A3900505304 /* BigPostCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigPostCollectionView.h; sourceTree = "<group>"; };
 		B3916F701B624A3900505304 /* BigPostCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigPostCollectionView.m; sourceTree = "<group>"; };
+		B39C69FA1B64F93B00F7C42E /* BigPostCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigPostCollectionCell.h; sourceTree = "<group>"; };
+		B39C69FB1B64F93B00F7C42E /* BigPostCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigPostCollectionCell.m; sourceTree = "<group>"; };
 		B3C78EBA1B588E3C00DD945E /* Mtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C78EBE1B588E3C00DD945E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3C78EBF1B588E3C00DD945E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -766,6 +769,8 @@
 				B38AF5F51B6217B900BEA128 /* PostView.m */,
 				B3916F6F1B624A3900505304 /* BigPostCollectionView.h */,
 				B3916F701B624A3900505304 /* BigPostCollectionView.m */,
+				B39C69FA1B64F93B00F7C42E /* BigPostCollectionCell.h */,
+				B39C69FB1B64F93B00F7C42E /* BigPostCollectionCell.m */,
 				B387C6941B5CC7460045B799 /* MyTableViewCell.h */,
 				B387C6951B5CC7460045B799 /* MyTableViewCell.m */,
 				B387C6CE1B5CEFFB0045B799 /* MyTableViewCell.xib */,
@@ -1378,6 +1383,7 @@
 				B35D4F281B5F37E1004A065D /* UIView+viewController.m in Sources */,
 				B3C790721B58F3CB00DD945E /* TopListViewController.m in Sources */,
 				B387C6C51B5CDB330045B799 /* SDWebImageManager.m in Sources */,
+				B39C69FC1B64F93B00F7C42E /* BigPostCollectionCell.m in Sources */,
 				B370DD1F1B61283D00B24D5B /* PhotoCollectionViewCell.m in Sources */,
 				B387C6971B5CC7460045B799 /* MyTableViewCell.m in Sources */,
 				B33456CC1B5E1D4A0054CF42 /* newsModel.m in Sources */,

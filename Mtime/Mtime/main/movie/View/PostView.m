@@ -23,73 +23,75 @@
 
 @implementation PostView
 
+#pragma mark - init方法
+//重写了init 并且增加了一个传入的参数， 所以这里要将这个函数暴露给.h文件，要不然 其他类看不到
 -(instancetype)initWithFrame:(CGRect)frame WithArray:(NSArray*)movieArray{
-    self = [super initWithFrame:frame];
+    self = [super initWithFrame:frame];  //所有的init 都应该先调用父类的init
     if (self) {
         
         self.movieArray = movieArray;
         [self _creatTopView];
-        
-        
 
     }
-    
-    
+
     return self;
-    
+
 }
 
-
+#pragma mark - 视图创建
 -(void)_creatTopView{
-    UIView* topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, Swidth, TopViewHeight)];
-    
+
+    //顶层的海报视图中，最底层都是按钮，按钮的图片 按素材顶部的1像素拉伸出来，然后放海报的View视图
     UIButton* topButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, Swidth, TopViewHeight)];
-    UIImage* topBtnImg = [UIImage imageNamed:@"indexBG_home"];
-    topBtnImg  =  [topBtnImg stretchableImageWithLeftCapWidth:0 topCapHeight:1];
+    UIImage* topBtnImg  = [UIImage imageNamed:@"indexBG_home"];
+    topBtnImg           = [topBtnImg stretchableImageWithLeftCapWidth:0 topCapHeight:1];
     [topButton setBackgroundImage:topBtnImg forState:UIControlStateNormal];
 //    topView.backgroundColor = [UIColor redColor];
     [topButton addTarget:self action:@selector(topButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [topView addSubview:topButton];
+    [self addSubview:topButton];//先添加button
     
     iCarousel* carouselView = [[iCarousel alloc]initWithFrame:CGRectMake(0, 0, Swidth, TopPostHeight)];
     carouselView.stopAtItemBoundary = YES;
     carouselView.delegate = self;
     carouselView.dataSource = self;
     carouselView.type = iCarouselTypeCoverFlow;
-    [topView addSubview:carouselView];
+    [self addSubview:carouselView]; //后添加carouseView
     
 
-    [self addSubview:topView];
+//    [self addSubview:topView];
     
     
     
     
 }
 
+#pragma mark - Action & 重用方法
 -(void)topButtonAction{
     
     [self MovieSelf];
-    
-    
+
 }
 
--(void)MovieSelf{
+-(void)MovieSelf{ //控制自己上下移动
     
     if (self.top < 0 ) {
         [UIView animateWithDuration:0.3 animations:^{
+      
             self.coverView.hidden = NO;
             self.top = 64;
 
         }];
     }else{
         [UIView animateWithDuration:0.3 animations:^{
+     
             self.coverView.hidden = YES;
             self.top = -36;
             
         }];
     }
-    
 }
+
+#pragma mark - iCarousel.delegat & dataSourse
 
 -(NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel{
     
@@ -103,18 +105,17 @@
     NSString* str = images[@"medium"];
     
     if (nil == view) {
-        view = [[UIImageView alloc]initWithFrame:CGRectMake((1-0.16)*Swidth/2, 5, 0.16*Swidth, 100)];
+        view                 = [[UIImageView alloc]initWithFrame:CGRectMake((1-0.16)*Swidth/2, 5, 0.16*Swidth, 100)];
         [((UIImageView*)view) sd_setImageWithURL:[NSURL URLWithString:str]];
         view.backgroundColor = [UIColor purpleColor];
         
         
         
     }else{
-        view = [[UIImageView alloc]initWithFrame:CGRectMake((1-0.16)*Swidth/2, 5, 0.16*Swidth, 90)];
         [((UIImageView*)view) sd_setImageWithURL:[NSURL URLWithString:str]];
 
         view.backgroundColor = [UIColor orangeColor];
-        
+
     }
     
     return view;
