@@ -17,6 +17,7 @@
 @property (nonatomic,strong) NSDictionary* image;
 @property (nonatomic,copy) NSString* stars;
 @property (nonatomic,assign)float average;
+@property (nonatomic,assign)NSInteger type;
 
 
 @end

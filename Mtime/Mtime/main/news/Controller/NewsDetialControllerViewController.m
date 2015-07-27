@@ -10,6 +10,7 @@
 #import "NewsCollectionViewCell.h"
 #import "PhotoViewController.h"
 #import "BaseNavigationController.h"
+#import "NewsWebViewController.h"
 
 @interface NewsDetialControllerViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
@@ -84,6 +85,9 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+   
+
     PhotoViewController* vc = [[PhotoViewController alloc]init];
     vc.imageURLArray = _imageUrlArray;
     BaseNavigationController* navi = [[BaseNavigationController alloc]initWithRootViewController:vc];

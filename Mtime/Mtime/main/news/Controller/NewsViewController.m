@@ -12,6 +12,7 @@
 #import "UIViewExt.h"
 #import "UIImageView+WebCache.h"
 #import "NewsDetialControllerViewController.h"
+#import "NewsWebViewController.h"
 
 @interface NewsViewController () <UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 
@@ -116,8 +117,20 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NewsDetialControllerViewController* news = [[NewsDetialControllerViewController alloc]init];
-    [self.navigationController pushViewController:news animated:YES];
+    newsModel* newsModel = _newsListArray[indexPath.row+1];
+    
+    if (newsModel.type == 0) {
+        NewsWebViewController* webVC = [[NewsWebViewController alloc]init];
+        [self.navigationController pushViewController:webVC animated:YES ];
+
+    }else{
+    
+        NewsDetialControllerViewController* news = [[NewsDetialControllerViewController alloc]init];
+        news.newsModel = self.newsListArray[indexPath.row +1];
+        [self.navigationController pushViewController:news animated:YES];
+        
+    }
+   
     
     
 }
