@@ -8,6 +8,7 @@
 
 #import "TopListViewController.h"
 #import "MyCollectionViewCell.h"
+#import "MovieDetialTableViewController.h"
 
 @interface TopListViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -83,9 +84,7 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    if (section == 3) {
-        return 1;
-    }else return 10;
+    return 10;
     
 }
 
@@ -96,6 +95,16 @@
     
     
 }
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    MovieDetialTableViewController* vc = [[MovieDetialTableViewController alloc]init];
+    vc.navigationItem.title = @"电影详情";
+//    vc.navigationItem.backBarButtonItem  = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
 
 /*
 #pragma mark - Navigation

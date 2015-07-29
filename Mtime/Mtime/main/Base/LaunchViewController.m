@@ -89,7 +89,7 @@
 //        ((UIImageView*)_imageViewArray[_index]).alpha = 1;
 //    } completion:nil];
     
-    [UIView animateWithDuration:3 animations:^{
+    [UIView animateWithDuration:0.05 animations:^{
     
         ((UIImageView*)_imageViewArray[_index]).alpha = 1;
     }];
@@ -97,7 +97,7 @@
        _index++;
 
     if (_index < 28) {
-      [self performSelector:@selector(magicCircle) withObject:nil afterDelay:.2];
+      [self performSelector:@selector(magicCircle) withObject:nil afterDelay:.05];
     }else {
         [UIView animateWithDuration:1 animations:^{
         MainTabBarViewController* vc = [[MainTabBarViewController alloc]init];

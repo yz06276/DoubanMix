@@ -29,6 +29,8 @@
     [self _creatMovieTableView];
     [self _creatMovieModel];
     [self _creatPostView];
+    
+    
   //  [self _creatBigCollection];
         
     
@@ -118,6 +120,13 @@
     [bottomButton setBackgroundImage:[UIImage imageNamed:@"tab_bg_all"] forState:UIControlStateNormal];
     [postView addSubview:bottomButton];
     
+    UIImageView* light1 = [[UIImageView alloc]initWithFrame:CGRectMake(0.1*Swidth, 64, 124, 204)];
+    light1.image = [UIImage imageNamed:@"light"];
+    [_postView addSubview:light1];
+    
+    UIImageView* light2 = [[UIImageView alloc]initWithFrame:CGRectMake(Swidth*0.9-124, 64, 124, 204)];
+    light2.image = [UIImage imageNamed:@"light"];
+    [_postView addSubview:light2];
     
     [self.view addSubview:_postView];
 }

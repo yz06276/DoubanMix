@@ -12,12 +12,12 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="109" height="158"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GWY-Wn-XNp">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GWY-Wn-XNp">
                         <rect key="frame" x="0.0" y="0.0" width="109" height="131"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="10.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yx-Pa-CcF">
-                        <rect key="frame" x="76" y="137" width="33" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yx-Pa-CcF">
+                        <rect key="frame" x="76" y="139" width="33" height="19"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -28,7 +28,7 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Xe-yn-Sem" customClass="starView">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Xe-yn-Sem" customClass="starView">
                         <rect key="frame" x="0.0" y="145" width="60" height="13"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -37,9 +37,12 @@
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="1Xe-yn-Sem" secondAttribute="trailing" constant="49" id="BOi-T6-sNe"/>
                 <constraint firstItem="2yx-Pa-CcF" firstAttribute="top" secondItem="GWY-Wn-XNp" secondAttribute="bottom" constant="8" symbolic="YES" id="M7I-E7-DXz"/>
+                <constraint firstItem="1Xe-yn-Sem" firstAttribute="top" secondItem="GWY-Wn-XNp" secondAttribute="bottom" constant="14" id="PRV-wN-Gep"/>
                 <constraint firstAttribute="bottom" secondItem="2yx-Pa-CcF" secondAttribute="bottom" id="RAa-Aq-h7f"/>
                 <constraint firstAttribute="bottom" secondItem="1Xe-yn-Sem" secondAttribute="bottom" id="SdH-dU-jXu"/>
+                <constraint firstItem="1Xe-yn-Sem" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="145" id="UbZ-uC-5bg"/>
                 <constraint firstItem="GWY-Wn-XNp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eaD-Ic-aeO"/>
                 <constraint firstAttribute="trailing" secondItem="2yx-Pa-CcF" secondAttribute="trailing" id="kNT-Cx-dbO"/>
                 <constraint firstItem="GWY-Wn-XNp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lcr-vy-edD"/>
@@ -54,7 +57,7 @@
                 <outlet property="starView" destination="1Xe-yn-Sem" id="OH4-gg-u1O"/>
                 <outlet property="title" destination="Xg5-nf-lds" id="1iI-gw-1d6"/>
             </connections>
-            <point key="canvasLocation" x="277.5" y="256"/>
+            <point key="canvasLocation" x="182.5" y="231"/>
         </collectionViewCell>
     </objects>
 </document>

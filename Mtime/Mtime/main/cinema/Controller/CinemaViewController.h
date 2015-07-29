@@ -10,4 +10,13 @@
 
 @interface CinemaViewController : BaseViewController
 
+@property (strong,nonatomic)NSDictionary* cinemaJsonDict;
+
+@property (strong,nonatomic)NSDictionary*districtJsonDict;
+
+@property (strong,nonatomic)NSMutableArray* cinemaModelArray;
+
+@property (strong,nonatomic)NSMutableArray* districtModelArray;
+
+@property(strong,nonatomic)UITableView* tableView;
 @end
