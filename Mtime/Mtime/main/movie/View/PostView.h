@@ -16,6 +16,9 @@
 @property (strong,nonatomic) MovieModel* movieModel;
 @property (strong,nonatomic) UIView* topView;
 @property (strong,nonatomic) UIView* coverView;
+@property (nonatomic) NSInteger currentIndex;
+@property (nonatomic,strong)iCarousel* littlePostView;
+
 
 -(instancetype)initWithFrame:(CGRect)frame WithArray:(NSArray*)movieArray;
 

@@ -96,13 +96,29 @@
 
 -(void)btnAction:(UIButton*)btn{
     
+    if (_frontView.hidden == YES) {
+        [UIView transitionWithView:_frontView duration:1 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+            
+            _frontView.hidden  = !_frontView.hidden;
+            _backView.hidden = !_backView.hidden;
+        } completion:nil];
+    }else {
+        [UIView transitionWithView:_backView duration:1 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+            
+            _frontView.hidden  = !_frontView.hidden;
+            _backView.hidden = !_backView.hidden;
+        } completion:nil];
+    }
     
-    [UIView animateWithDuration:1 animations:^{
     
-        _frontView.hidden  = !_frontView.hidden;
-        _backView.hidden = !_backView.hidden;
     
-    }];
+//    [UIView animateWithDuration:1 animations:^{
+//    
+//        
+//    
+//    }];
+//    
+  
     
     
 }
@@ -144,6 +160,7 @@
     _year.frame = CGRectMake(_labelX, _labelY+height1+height2, _labelWidth, height2+height1);
     
 }
+
 
 
 /*

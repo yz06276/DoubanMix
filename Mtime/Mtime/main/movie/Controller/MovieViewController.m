@@ -29,6 +29,7 @@
     [self _creatMovieTableView];
     [self _creatMovieModel];
     [self _creatPostView];
+    [self addObserver];
     
     
   //  [self _creatBigCollection];
@@ -116,8 +117,11 @@
     topPostView.coverView = coverView;
     [postView addSubview:topPostView];
 
-    UIButton* bottomButton = [[UIButton alloc]initWithFrame:CGRectMake(0, Sheight-84, Swidth, 35)];
-    [bottomButton setBackgroundImage:[UIImage imageNamed:@"tab_bg_all"] forState:UIControlStateNormal];
+    UILabel* bottomButton = [[UILabel alloc]initWithFrame:CGRectMake(0, Sheight-84, Swidth, 35)];
+    [bottomButton setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"tab_bg_all"]]];
+    _bottomTitleLabel = bottomButton;
+    _bottomTitleLabel.textAlignment = NSTextAlignmentCenter;
+    _bottomTitleLabel.textColor = [UIColor lightTextColor];
     [postView addSubview:bottomButton];
     
     UIImageView* light1 = [[UIImageView alloc]initWithFrame:CGRectMake(0.1*Swidth, 64, 124, 204)];
@@ -127,7 +131,8 @@
     UIImageView* light2 = [[UIImageView alloc]initWithFrame:CGRectMake(Swidth*0.9-124, 64, 124, 204)];
     light2.image = [UIImage imageNamed:@"light"];
     [_postView addSubview:light2];
-    
+    _bigPostView = bigCollection;
+    _littlePostView = topPostView;
     [self.view addSubview:_postView];
 }
 
@@ -183,6 +188,36 @@
     
     NSMutableDictionary* dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     return dict;
+    
+}
+
+#pragma mark - 同步动画
+
+- (void)addObserver{
+    
+    [self.bigPostView addObserver:self forKeyPath:@"currentIndex" options:NSKeyValueObservingOptionNew context:nil];
+    [self.littlePostView addObserver:self forKeyPath:@"currentIndex" options:NSKeyValueObservingOptionNew context:nil];
+    
+    
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    
+    NSNumber* number = change[@"new"];
+    NSInteger newIndex = [number integerValue];
+    
+    if ([object isKindOfClass:[PostView class]]  &&  _bigPostView.bigPostView.currentItemIndex != newIndex) {
+        [_bigPostView.bigPostView scrollToItemAtIndex:newIndex animated:YES];
+        _bigPostView.currentIndex = newIndex;
+    }else if([object isKindOfClass:[BigPostCollectionView class]] && _littlePostView.littlePostView.currentItemIndex != newIndex){
+        
+        [_littlePostView.littlePostView scrollToItemAtIndex:newIndex animated:YES];
+        _littlePostView.currentIndex = newIndex;
+        
+    }
+    
+    _bottomTitleLabel.text = ((MovieModel*)_movieModelArray[newIndex]).title;
+    
     
 }
 

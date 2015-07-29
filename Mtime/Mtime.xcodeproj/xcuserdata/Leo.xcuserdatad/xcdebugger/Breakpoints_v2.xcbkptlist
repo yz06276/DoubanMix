@@ -150,11 +150,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mtime/main/movie/Controller/MovieViewController.m"
-            timestampString = "459689193.536486"
+            timestampString = "459847790.555549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "-_creatMovieModel"
             landmarkType = "5">
          </BreakpointContent>
@@ -182,27 +182,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mtime/main/movie/View/BigPostCollectionCell.m"
-            timestampString = "459612703.153284"
+            timestampString = "459848303.95977"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "-btnAction:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Mtime/main/movie/View/BigPostCollectionCell.m"
-            timestampString = "459612703.153284"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "@implementation BigPostCollectionCell"
             landmarkType = "3">
          </BreakpointContent>
@@ -470,12 +454,12 @@
                   moduleName = "Mtime"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Leo/Documents/GitHub/Mtime_DoubanMix/Mtime/Mtime/main/top/Controller/MovieDetialTableViewController.h"
-                  timestampString = "459774377.426145"
+                  timestampString = "459847640.303238"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
                   endingLineNumber = "13"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "12">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -485,12 +469,12 @@
                   moduleName = "Mtime"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Leo/Documents/GitHub/Mtime_DoubanMix/Mtime/Mtime/main/top/Controller/MovieDetialTableViewController.h"
-                  timestampString = "459774377.426312"
+                  timestampString = "459847640.30335"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
                   endingLineNumber = "13"
-                  offsetFromSymbolStart = "32">
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -540,6 +524,38 @@
             startingLineNumber = "106"
             endingLineNumber = "106"
             landmarkName = "-tableView:heightForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mtime/main/movie/Controller/MovieViewController.m"
+            timestampString = "459847790.555549"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
+            landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mtime/main/movie/Controller/MovieViewController.m"
+            timestampString = "459847790.555549"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "-addObserver"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

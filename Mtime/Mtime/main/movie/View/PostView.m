@@ -51,6 +51,7 @@
     [self addSubview:topButton];//先添加button
     
     iCarousel* carouselView = [[iCarousel alloc]initWithFrame:CGRectMake(0, 0, Swidth, TopPostHeight)];
+    _littlePostView = carouselView;
     carouselView.stopAtItemBoundary = YES;
     carouselView.delegate = self;
     carouselView.dataSource = self;
@@ -129,6 +130,29 @@
     }
     return value;
 }
+
+//-(void)carouselDidScroll:(iCarousel *)carousel{
+//    
+//    self.currentIndex = carousel.currentItemIndex;
+//    
+//}
+
+
+
+-(void)carouselDidEndScrollingAnimation:(iCarousel *)carousel{
+    self.currentIndex = carousel.currentItemIndex;
+    
+}
+
+//因为iCarouse 是默认同时支持点击和scroll,  使用上下两个标注的会出现点击不能同步,或者互相死循环观察.
+
+
+//-(void)carouselDidEndDecelerating:(iCarousel *)carousel{
+//    
+//    self.currentIndex = carousel.currentItemIndex;
+//    
+//}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

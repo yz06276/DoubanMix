@@ -7,7 +7,13 @@
 //
 
 #import "BaseViewController.h"
-
+#import "BigPostCollectionView.h"
+#import "PostView.h"
 @interface MovieViewController : BaseViewController
+
+@property (strong,nonatomic) BigPostCollectionView* bigPostView;
+@property (strong,nonatomic) PostView* littlePostView;
+
+@property (strong,nonatomic)UILabel* bottomTitleLabel;
 
 @end
