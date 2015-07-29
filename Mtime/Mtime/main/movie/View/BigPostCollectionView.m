@@ -25,10 +25,10 @@
         collectionView.type = iCarouselTypeWheel;
         collectionView.delegate = self;
         collectionView.dataSource = self;
-//        collectionView.ignorePerpendicularSwipes = YES;
+        collectionView.ignorePerpendicularSwipes = YES;
         [self addSubview:collectionView];
-        _bigPostView = collectionView;
-
+        
+        
     }
     return self;
 }
@@ -67,23 +67,12 @@
     return view;
 }
 
--(void)setCurrentIndex:(NSInteger)currentIndex{
-    _currentIndex = currentIndex;
-    _bigPostView.currentItemIndex = _currentIndex;
-}
-
 -(CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value{
     
     if (option == iCarouselOptionSpacing) {
         return value*1.2;
     }
     return value;
-    
-}
-
--(void)carouselDidScroll:(iCarousel *)carousel{
-    
-    self.currentIndex = carousel.currentItemIndex;
     
 }
 
