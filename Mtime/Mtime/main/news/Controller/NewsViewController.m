@@ -18,7 +18,7 @@
 
 @property (nonatomic,strong)NSMutableArray* newsListArray;
 @property (nonatomic,strong)UITableView* newsTableView;
-@property (nonatomic,strong)UIScrollView* headScrollView;
+@property (nonatomic,strong)UIImageView* headScrollView;
 
 @end
 
@@ -36,6 +36,9 @@
     // Do any additional setup after loading the view from its nib.
 }
 -(void)_creatScrollView{
+//    UIImageView* headImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 64, Swidth, 200)];
+    
+    
     
     UIScrollView* headScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 64, Swidth, 200)];
     headScrollView.backgroundColor = [UIColor redColor];
@@ -52,10 +55,11 @@
     
     [headImage2 sd_setImageWithURL:[NSURL URLWithString:model2.image]];
     [headScrollView addSubview:headImage2];
-    self.headScrollView = headScrollView;
-    
-    [self.view addSubview:headScrollView];
-
+//    self.headScrollView = headScrollView;
+    UIView* view = [[UIView alloc]initWithFrame:CGRectMake(0, 64, Swidth, 200)];
+    [view addSubview:headImage1];
+    [self.view addSubview:headImage1];
+    self.headScrollView = headImage1;
     
     
 }
@@ -134,6 +138,15 @@
     
     
 }
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    UIImageView* headImage1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Swidth, 200)];
+    
+    return headImage1;
+    
+    
+}
 -(void)creatNewsModel{
     
     NSArray* newsArray = [self readJsonFromLocal:@"news_list.json"];
@@ -149,6 +162,7 @@
 }
 
 
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat offY = scrollView.contentOffset.y;
     
@@ -162,7 +176,8 @@
         CGFloat newHeight = ABS(offY)-64+200;
         CGFloat newWidth = Swidth/200*newHeight;
         
-        _headScrollView.frame = CGRectMake((Swidth-newWidth)/4, 64, newWidth, newHeight);
+        _headScrollView.frame = CGRectMake((Swidth-newWidth)/2, 64, newWidth, newHeight);
+        
     }
     
     
