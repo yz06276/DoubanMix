@@ -29,7 +29,8 @@
     [self _creatMovieTableView];
     [self _creatMovieModel];
     [self _creatPostView];
-    
+    [self addObserver];
+   
     
   //  [self _creatBigCollection];
         
@@ -92,34 +93,48 @@
 
 
 
+
 -(void)_creatPostView{
     
     UIView* postView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, Swidth, Sheight)];
     //画蛇添足放的这个东西， 是为了 实现点击右上角按钮，可以显示两个视图之间的翻转，所以海报的View 和 tableView被完全隔离放在两个View上， 通过改变对立的hidden状态来实现  轮流显示
-
     
     
+    //创建大海报视图
     BigPostCollectionView* bigCollection = [[BigPostCollectionView alloc]initWithFrame:CGRectMake(0, 100, Swidth, Sheight-149) WithArray:self.movieModelArray];
-//    bigCollection.movieArray = self.movieModelArray;
-
-//    bigCollection.backgroundColor = [UIColor blueColor];
-
-//    bigCollection.movieArray = self.movieModelArray;
     self.postView = postView;
+    _bigPostView = bigCollection;
+    
+    //创建顶部小海报视图
     PostView* topPostView = [[PostView alloc]initWithFrame:CGRectMake(0, -36, Swidth, 136) WithArray:self.movieModelArray];
+    
+    //呼出小海报视图的时候, 下面的大海报要不可点,这里放一个透明灰色的view, 在合适的时候修改hidden,遮住大海报
     UIView* coverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, Swidth, Sheight)];
     coverView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
     self.coverView = coverView;
     coverView.hidden = YES;
+    _littlePostView = topPostView;
+    
+//    [bigCollection addObserver:self forKeyPath:@"currentIndex" options:NSKeyValueObservingOptionNew context:nil];
+    [topPostView addObserver:self forKeyPath:@"currentIndex" options:NSKeyValueObservingOptionNew context:nil];
+    
+//    [bigCollection ani]
+    
+    
     [postView addSubview:bigCollection];
     [postView addSubview:coverView];
+    //顶部按钮的声明在PostView中,所以 这里传过去coverView的变量
     topPostView.coverView = coverView;
     [postView addSubview:topPostView];
 
-    UIButton* bottomButton = [[UIButton alloc]initWithFrame:CGRectMake(0, Sheight-84, Swidth, 35)];
-    [bottomButton setBackgroundImage:[UIImage imageNamed:@"tab_bg_all"] forState:UIControlStateNormal];
-    [postView addSubview:bottomButton];
     
+    UILabel* bottomTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, Sheight-84, Swidth, 35)];
+    [bottomTitleLabel setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"tab_bg_all"]]];
+    _bottomTitleLabel = bottomTitleLabel;
+    
+    [postView addSubview:bottomTitleLabel];
+    
+    //顶部的两盏灯
     UIImageView* light1 = [[UIImageView alloc]initWithFrame:CGRectMake(0.1*Swidth, 64, 124, 204)];
     light1.image = [UIImage imageNamed:@"light"];
     [_postView addSubview:light1];
@@ -127,6 +142,8 @@
     UIImageView* light2 = [[UIImageView alloc]initWithFrame:CGRectMake(Swidth*0.9-124, 64, 124, 204)];
     light2.image = [UIImage imageNamed:@"light"];
     [_postView addSubview:light2];
+    
+    
     
     [self.view addSubview:_postView];
 }
@@ -149,6 +166,29 @@
         [_movieModelArray addObject:model];
     }
 }
+
+#pragma mark - 观察者设置,实现大小海报同步
+
+-(void)addObserver{
+  
+//        [_bigPostView addObserver:self forKeyPath:@"currentIndex" options:NSKeyValueObservingOptionNew context:nil];
+    [_littlePostView addObserver:self forKeyPath:@"currentIndex" options:NSKeyValueObservingOptionNew context:nil];
+    
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    
+    NSNumber* number = [change objectForKey:@"new"];
+    
+    NSInteger newIndex = [number integerValue];
+    
+//    NSIndexPath* indexpath = [NSIndexPath indexPathForRow:newIndex inSection:0];
+    
+        [_bigPostView.bigPostView scrollToItemAtIndex:newIndex animated:YES];
+    
+}
+
+
 #pragma  mark - Action
 - (void)flipAction:(UIButton*)btn{
     UIView* flipView = self.navigationItem.rightBarButtonItem.customView;

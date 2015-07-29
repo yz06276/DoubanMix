@@ -13,7 +13,8 @@
 
 @property (strong,nonatomic) MovieModel* movieModel;
 @property (strong,nonatomic) NSArray* movieArray;
-
+@property (nonatomic) NSInteger currentIndex;
+@property (nonatomic,strong)iCarousel* bigPostView;
 - (instancetype)initWithFrame:(CGRect)frame WithArray:(NSArray*)movieArray;
 
 @end
