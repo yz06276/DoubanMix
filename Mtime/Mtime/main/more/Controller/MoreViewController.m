@@ -108,9 +108,12 @@
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
-    [_cache clearDisk];
-    
-    [_moreTableView reloadData];
+    if (buttonIndex == 1) {
+        [_cache clearDisk];
+        
+        [_moreTableView reloadData];
+    }
+
     
 }
 

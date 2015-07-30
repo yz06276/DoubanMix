@@ -39,7 +39,7 @@
     UICollectionViewFlowLayout* layout = [[UICollectionViewFlowLayout alloc]init];
     layout.minimumInteritemSpacing = 1;
     layout.minimumLineSpacing = 1;
-    layout.itemSize = CGSizeMake((Swidth-40)/3, Sheight/3.3);
+    layout.itemSize = CGSizeMake((Swidth-40)/3, Sheight/4);
     
     UICollectionView* collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, Swidth, Sheight) collectionViewLayout:layout];
     collectionView.dataSource = self;
@@ -73,7 +73,7 @@
         model.stars = [[subject objectForKey:@"rating"]objectForKey:@"stars"];
         [_movieModelArray addObject:model];
     }
-    NSLog(@"%@",_movieModelArray);
+//    NSLog(@"%@",_movieModelArray);
     
 }
 

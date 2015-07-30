@@ -114,7 +114,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    tableView.tableHeaderView.backgroundColor = [UIColor clearColor];
+    tableView.tableHeaderView.backgroundColor = [UIColor whiteColor];
     return 200.0;
     
 }

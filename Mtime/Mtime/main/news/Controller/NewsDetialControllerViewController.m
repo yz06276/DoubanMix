@@ -30,7 +30,7 @@
     flowLayout.itemSize = CGSizeMake((Swidth-60)/5, (Swidth-60)/5);
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     UICollectionView* newsCollection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, Swidth, Sheight) collectionViewLayout:flowLayout];
-    newsCollection.backgroundColor = [UIColor clearColor];
+    newsCollection.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"selectTabbar_bg_all"]];
     newsCollection.dataSource = self;
     newsCollection.delegate = self;
 //    flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 20, 10);
@@ -91,7 +91,7 @@
     PhotoViewController* vc = [[PhotoViewController alloc]init];
     vc.imageURLArray = _imageUrlArray;
     BaseNavigationController* navi = [[BaseNavigationController alloc]initWithRootViewController:vc];
-    NSLog(@"1123");
+//    NSLog(@"1123");
     [self presentViewController:navi animated:YES completion:nil];
     
     

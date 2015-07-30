@@ -14,25 +14,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K96-S5-QVv">
-                        <rect key="frame" x="8" y="3" width="54" height="53"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K96-S5-QVv">
+                        <rect key="frame" x="1" y="3" width="54" height="53"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="54" id="91q-XH-efJ"/>
                             <constraint firstAttribute="height" constant="53" id="HjV-Gk-Dju"/>
                             <constraint firstAttribute="width" constant="54" id="NzR-sr-nmb"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LQV-pc-Ir9">
-                        <rect key="frame" x="70" y="3" width="243" height="53"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LQV-pc-Ir9">
+                        <rect key="frame" x="63" y="3" width="257" height="53"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxE-Uv-tIB">
-                        <rect key="frame" x="77" y="7" width="33" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxE-Uv-tIB">
+                        <rect key="frame" x="70" y="7" width="33" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.65909090909090917" green="0.40805001689594111" blue="0.18732057416267944" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDy-Zf-yNt">
-                        <rect key="frame" x="260" y="6" width="31" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDy-Zf-yNt">
+                        <rect key="frame" x="267" y="6" width="31" height="15"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="31" id="PbM-fS-PaQ"/>
                         </constraints>
@@ -40,8 +40,8 @@
                         <color key="textColor" red="0.54797979797979801" green="0.54797979797979801" blue="0.54797979797979801" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1t-Ac-M9T">
-                        <rect key="frame" x="77" y="24" width="230" height="29"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1t-Ac-M9T">
+                        <rect key="frame" x="70" y="32" width="244" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.34090909090909094" green="0.34090909090909094" blue="0.34090909090909094" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>

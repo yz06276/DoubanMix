@@ -32,6 +32,7 @@
     _average.text = [NSString stringWithFormat:@"%.1f",_model.average];
     _title.backgroundColor = [UIColor blackColor];
     _title.alpha = 0.5;
+    [_title setTextColor:[UIColor whiteColor]];
     NSString* imageURL = _model.image[@"medium"];
     [_postIcon sd_setImageWithURL:[NSURL URLWithString:imageURL]];
     _starView.stars = _model.stars;

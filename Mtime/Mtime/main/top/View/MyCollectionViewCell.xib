@@ -2,62 +2,75 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="topCell" id="gTV-IL-0wX" customClass="MyCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="109" height="158"/>
+            <rect key="frame" x="0.0" y="0.0" width="165" height="265"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="109" height="158"/>
+                <rect key="frame" x="0.0" y="0.0" width="165" height="265"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GWY-Wn-XNp">
-                        <rect key="frame" x="0.0" y="0.0" width="109" height="131"/>
+                        <rect key="frame" x="0.0" y="0.0" width="165" height="217"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="GWY-Wn-XNp" secondAttribute="height" multiplier="13:17" id="HGc-JL-MDc"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yx-Pa-CcF">
-                        <rect key="frame" x="76" y="139" width="33" height="19"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yx-Pa-CcF">
+                        <rect key="frame" x="135" y="222" width="30" height="38"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="LBc-bk-1DY"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg5-nf-lds">
-                        <rect key="frame" x="8" y="108" width="93" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Xe-yn-Sem" customClass="starView">
+                        <rect key="frame" x="-1" y="222" width="86" height="17"/>
+                        <color key="backgroundColor" red="0.72531110050000003" green="0.98232322930000004" blue="0.2547053695" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg5-nf-lds">
+                        <rect key="frame" x="0.0" y="193" width="165" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="Bwn-Tl-Evg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Xe-yn-Sem" customClass="starView">
-                        <rect key="frame" x="0.0" y="145" width="60" height="13"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="1Xe-yn-Sem" secondAttribute="trailing" constant="49" id="BOi-T6-sNe"/>
-                <constraint firstItem="2yx-Pa-CcF" firstAttribute="top" secondItem="GWY-Wn-XNp" secondAttribute="bottom" constant="8" symbolic="YES" id="M7I-E7-DXz"/>
-                <constraint firstItem="1Xe-yn-Sem" firstAttribute="top" secondItem="GWY-Wn-XNp" secondAttribute="bottom" constant="14" id="PRV-wN-Gep"/>
-                <constraint firstAttribute="bottom" secondItem="2yx-Pa-CcF" secondAttribute="bottom" id="RAa-Aq-h7f"/>
-                <constraint firstAttribute="bottom" secondItem="1Xe-yn-Sem" secondAttribute="bottom" id="SdH-dU-jXu"/>
-                <constraint firstItem="1Xe-yn-Sem" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="145" id="UbZ-uC-5bg"/>
-                <constraint firstItem="GWY-Wn-XNp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eaD-Ic-aeO"/>
-                <constraint firstAttribute="trailing" secondItem="2yx-Pa-CcF" secondAttribute="trailing" id="kNT-Cx-dbO"/>
-                <constraint firstItem="GWY-Wn-XNp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lcr-vy-edD"/>
-                <constraint firstItem="1Xe-yn-Sem" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lxS-EM-brc"/>
-                <constraint firstItem="2yx-Pa-CcF" firstAttribute="leading" secondItem="1Xe-yn-Sem" secondAttribute="trailing" constant="16" id="oLS-zi-JfB"/>
-                <constraint firstAttribute="trailing" secondItem="GWY-Wn-XNp" secondAttribute="trailing" id="zbG-q0-ODW"/>
+                <constraint firstItem="Xg5-nf-lds" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1i2-9s-nfe"/>
+                <constraint firstAttribute="bottom" secondItem="2yx-Pa-CcF" secondAttribute="bottom" constant="5" id="CBS-ax-rF4"/>
+                <constraint firstItem="2yx-Pa-CcF" firstAttribute="top" secondItem="GWY-Wn-XNp" secondAttribute="bottom" constant="5" id="Dbn-4x-ZEK"/>
+                <constraint firstItem="GWY-Wn-XNp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="E6z-Yi-cVj"/>
+                <constraint firstItem="GWY-Wn-XNp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="G2I-XF-V5o"/>
+                <constraint firstItem="Xg5-nf-lds" firstAttribute="width" secondItem="GWY-Wn-XNp" secondAttribute="width" id="GAc-wP-iIf"/>
+                <constraint firstAttribute="trailing" secondItem="GWY-Wn-XNp" secondAttribute="trailing" id="Gg9-To-NEb"/>
+                <constraint firstAttribute="bottom" secondItem="1Xe-yn-Sem" secondAttribute="bottom" constant="26" id="K5X-3u-6XE"/>
+                <constraint firstItem="Xg5-nf-lds" firstAttribute="top" secondItem="GWY-Wn-XNp" secondAttribute="bottom" constant="-24" id="Ner-yw-vfS"/>
+                <constraint firstAttribute="trailing" secondItem="2yx-Pa-CcF" secondAttribute="trailing" id="YBp-E1-oBP"/>
+                <constraint firstItem="2yx-Pa-CcF" firstAttribute="leading" secondItem="1Xe-yn-Sem" secondAttribute="trailing" constant="50" id="Zwd-WV-rRQ"/>
+                <constraint firstItem="1Xe-yn-Sem" firstAttribute="top" secondItem="GWY-Wn-XNp" secondAttribute="bottom" constant="5" id="cZo-Ge-sKM"/>
+                <constraint firstItem="1Xe-yn-Sem" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="-1" id="fW8-O2-96M"/>
+                <constraint firstAttribute="centerX" secondItem="GWY-Wn-XNp" secondAttribute="centerX" id="h5L-Se-Bh5"/>
+                <constraint firstAttribute="trailing" secondItem="Xg5-nf-lds" secondAttribute="trailing" id="wSa-nV-uKU"/>
             </constraints>
-            <size key="customSize" width="109" height="158"/>
+            <size key="customSize" width="165" height="265"/>
             <connections>
                 <outlet property="average" destination="2yx-Pa-CcF" id="pzp-xf-MMC"/>
                 <outlet property="postIcon" destination="GWY-Wn-XNp" id="VvG-BP-Xpt"/>
                 <outlet property="starView" destination="1Xe-yn-Sem" id="OH4-gg-u1O"/>
                 <outlet property="title" destination="Xg5-nf-lds" id="1iI-gw-1d6"/>
             </connections>
-            <point key="canvasLocation" x="182.5" y="231"/>
+            <point key="canvasLocation" x="514.5" y="549.5"/>
         </collectionViewCell>
     </objects>
 </document>

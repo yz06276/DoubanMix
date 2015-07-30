@@ -89,14 +89,15 @@
 //        ((UIImageView*)_imageViewArray[_index]).alpha = 1;
 //    } completion:nil];
     
-    [UIView animateWithDuration:0.05 animations:^{
     
-        ((UIImageView*)_imageViewArray[_index]).alpha = 1;
-    }];
 //
-       _index++;
+    
 
     if (_index < 28) {
+        [UIView animateWithDuration:0.05 animations:^{
+            
+            ((UIImageView*)_imageViewArray[_index]).alpha = 1;
+        }];
       [self performSelector:@selector(magicCircle) withObject:nil afterDelay:.05];
     }else {
         [UIView animateWithDuration:1 animations:^{
@@ -104,6 +105,7 @@
             self.view.window.rootViewController = vc;}];
         
     }
+     _index++;
 }
 
 //-(void) magicAnimation{
