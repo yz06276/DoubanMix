@@ -1,2 +1,2 @@
-# Mtime_DoubanMix
-Mtime mix with Douban
+#DoubanMix
+mix with Douban
